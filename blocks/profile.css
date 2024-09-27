@@ -23,19 +23,34 @@
 }
 
 .profile__edit-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: auto;
   border: none;
   background-color: #fcf5e5;
   color: #212121;
+  gap: 8px;
 }
 
 .profile__add-btn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   align-self: flex-end;
   margin-left: auto;
   background-color: #212121;
   border-radius: 8px;
   border: none;
   color: #fcf5e5;
+  padding: 18px 32px;
+  max-width: 149px;
+  max-height: 52px;
+  gap: 8px;
+}
+
+.profile__add-image {
+  width: 12px;
+  height: 12px;
 }
