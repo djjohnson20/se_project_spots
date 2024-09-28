@@ -29,8 +29,14 @@
   margin-top: auto;
   border: none;
   background-color: #fcf5e5;
-  color: #212121;
+  color: rgb(33, 33, 33);
+  opacity: 80%;
   gap: 8px;
+}
+
+.profile__edit-image {
+  color: rgb(33, 33, 33);
+  opacity: 80%;
 }
 
 .profile__add-btn {
