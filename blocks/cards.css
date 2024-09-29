@@ -13,8 +13,21 @@
   margin: 0;
   font-size: 20px;
   line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .cards {
   padding-top: 20px;
+}
+
+@media screen and (max-width: 627px) {
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, 288px);
+  }
+
+  .card__title {
+    max-width: 288px;
+  }
 }
