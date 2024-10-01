@@ -1,7 +1,3 @@
-.footer {
-  border-top: 1px rgba(33, 33, 33, 0.4) solid;
-}
-
 .footer__copyright {
   margin: 0 auto;
   padding-top: 60px;
@@ -11,4 +7,10 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1;
+}
+
+@media screen and (max-width: 627px) {
+  .footer {
+    padding: 0 20px;
+  }
 }

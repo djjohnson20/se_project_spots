@@ -14,17 +14,21 @@ A webpage that allows users to share their photos with captions for the world. F
 
 ## Screenshots of Project
 
-![alt text](Desktopview.png)
-
 - Project in Desktop View
 
-![alt text](Tabletview.png)
+![alt text](images/Desktopview.png)
 
 - Project in Tablet View
 
-![alt text](Mobileview.png)
+![alt text](images/Tabletview.png)
 
 - Project in Mobile View
+
+![alt text](images/Mobileview.png)
+
+## Project Description Video
+
+-
 
 ## Deployment
 
