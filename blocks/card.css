@@ -1,5 +1,6 @@
 .card {
   position: relative;
+  cursor: pointer;
 }
 
 .card__image {
@@ -64,6 +65,7 @@
 .card__like-button_liked {
   background-image: url(../images/like-btn.svg);
   opacity: 1;
+  background-position: center;
 }
 
 .card__like-button_liked:hover {

@@ -9,22 +9,53 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 10px;
+  transition: visibility 0s 0.5s, opacity 0.5s ease-in-out;
+  opacity: 0;
   visibility: hidden;
 }
 
 .modal_is-opened {
+  transition: visibility 0s, opacity 0.5s ease-in-out;
+  opacity: 1;
   visibility: visible;
 }
 
-.modal__container {
+.modal__content {
   background-color: #fff;
-  padding: 32px 50px;
+  padding: 36px 50px 32px;
   max-width: 730px;
   width: 100%;
   box-sizing: border-box;
   position: relative;
+  border-radius: 10px;
+}
+
+.modal__content_type_preview {
+  padding: 0;
+  background: transparent;
+}
+
+.modal__image {
+  width: 100%;
+  max-width: 80vw;
+  max-height: 80vh;
   border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.modal__caption {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background-color: #212121;
+  color: #fff;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  text-wrap: nowrap;
 }
 
 .modal__close-btn {
@@ -35,8 +66,18 @@
   height: 40px;
   background-image: url(../images/Close\ Icon.svg);
   background-position: center;
-  background-color: #fff;
+  background-color: transparent;
   border: none;
+}
+
+.modal__close-btn_type_preview {
+  background-image: url(../images/close-button.svg);
+  top: 0;
+  right: -52.5px;
+}
+
+.modal__close-btn_type_preview:hover {
+  background-image: url(../images/close-btn-hover.svg);
 }
 
 .modal__close-btn:hover {
@@ -119,5 +160,17 @@
 
   .modal__submit-btn {
     width: 100%;
+  }
+
+  .modal__content {
+    padding: 0;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .modal__close-btn_type_preview {
+    top: -45px;
+    right: 0;
   }
 }
