@@ -111,6 +111,10 @@ function handleAddCardSubmit(evt) {
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
+
+  cardNameInput.value = "";
+  cardLinkInput.value = "";
+
   closeModal(cardModal);
 }
 
