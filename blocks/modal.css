@@ -162,7 +162,7 @@
 
   .modal__title {
     font-size: 20px;
-    margin: 10px 0 34px;
+    margin: 24px 0 34px;
   }
 
   .modal__close-btn {
@@ -188,7 +188,7 @@
   }
 
   .modal__content {
-    padding: 0;
+    padding: 0 10px 12px;
     position: relative;
   }
 
