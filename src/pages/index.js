@@ -1,3 +1,29 @@
+import "./index.css";
+
+import HeaderSrc from "/src/images/logo.svg";
+import PlusSrc from "/src/images/plus.svg";
+import PencilSrc from "/src/images/pencil.svg";
+import AvatarSrc from "/src/images/avatar.jpg";
+
+const HeaderLogo = document.getElementById("header-logo");
+HeaderLogo.src = HeaderSrc;
+
+const PlusLogo = document.getElementById("plus");
+PlusLogo.src = PlusSrc;
+
+const PencilLogo = document.getElementById("pencil");
+PencilLogo.src = PencilSrc;
+
+const Avatar = document.getElementById("avatar");
+Avatar.src = AvatarSrc;
+
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+  disableButton,
+} from "../scripts/validation.js";
+
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -171,3 +197,5 @@ function handleOverLayClose(evt) {
     closeModal(evt.target);
   }
 }
+
+enableValidation(settings);
