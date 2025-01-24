@@ -4,6 +4,7 @@ import HeaderSrc from "/src/images/logo.svg";
 import PlusSrc from "/src/images/plus.svg";
 import PencilSrc from "/src/images/pencil.svg";
 import AvatarSrc from "/src/images/avatar.jpg";
+import PencilLightSrc from "/src/images/pencil-light.svg";
 
 const HeaderLogo = document.getElementById("header-logo");
 HeaderLogo.src = HeaderSrc;
@@ -16,6 +17,9 @@ PencilLogo.src = PencilSrc;
 
 const Avatar = document.getElementById("avatar");
 Avatar.src = AvatarSrc;
+
+const AvatarPencil = document.getElementById("pencil-light");
+AvatarPencil.src = PencilLightSrc;
 
 import {
   enableValidation,
@@ -52,6 +56,14 @@ const cardEditButton = document.querySelector(".profile__add-btn");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const profileAvatar = document.querySelector(".profile__avatar");
+const avatarModal = document.querySelector("#avatar-modal");
+
+//Avatar form elements
+const avatarEditButton = document.querySelector(".profile__avatar-btn");
+const avatarFormElement = avatarModal.querySelector(".modal__form");
+const avatarSubmitBtn = avatarModal.querySelector(".modal__submit-btn");
+const avatarModalCloseBtn = avatarModal.querySelector(".modal__close-btn");
+const avatarLinkInput = avatarModal.querySelector("#profile-avatar-input");
 
 // Form elements
 const editModal = document.querySelector("#edit-modal");
@@ -61,6 +73,10 @@ const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
+
+// Delete form elemenets
+const deleteModal = document.querySelector("#delete-modal");
+const deleteCloseBtn = deleteModal.querySelector(".modal__close-btn");
 
 // Card form elements
 const cardModal = document.querySelector("#add-card-modal");
@@ -106,7 +122,7 @@ function getCardElement(data) {
   });
 
   cardDeleteBtn.addEventListener("click", () => {
-    cardElement.remove();
+    openModal(deleteModal);
   });
 
   return cardElement;
@@ -135,6 +151,17 @@ function handleEditFormSubmit(evt) {
       profileName.textContent = data.name;
       profileDescription.textContent = data.about;
       closeModal(editModal);
+    })
+    .catch(console.error);
+}
+
+function handleAvatarSubmit(evt) {
+  evt.preventDefault();
+  api
+    .editAvatarInfo(avatarLinkInput.value)
+    .then((data) => {
+      profileAvatar.src = data.avatar;
+      closeModal(avatarModal);
     })
     .catch(console.error);
 }
@@ -177,8 +204,23 @@ previewModalCloseBtn.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
+avatarEditButton.addEventListener("click", () => {
+  openModal(avatarModal);
+});
+
+avatarModalCloseBtn.addEventListener("click", () => {
+  closeModal(avatarModal);
+});
+
+deleteCloseBtn.addEventListener("click", () => {
+  closeModal(deleteModal);
+});
+
 editFormElement.addEventListener("submit", handleEditFormSubmit);
+
 cardFormElement.addEventListener("submit", handleAddCardSubmit);
+
+avatarFormElement.addEventListener("submit", handleAvatarSubmit);
 
 function handleEscClose(evt) {
   if (evt.key === "Escape") {
