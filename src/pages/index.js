@@ -166,15 +166,32 @@ function handleAvatarSubmit(evt) {
     .catch(console.error);
 }
 
+// function handleAddCardSubmit(evt) {
+//   evt.preventDefault();
+//   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
+//   const cardElement = getCardElement(inputValues);
+//   cardsList.prepend(cardElement);
+//   cardNameInput.value = "";
+//   cardLinkInput.value = "";
+//   disableButton(cardSubmitBtn, settings);
+//   closeModal(cardModal);
+// }
+
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
-  const cardElement = getCardElement(inputValues);
-  cardsList.prepend(cardElement);
-  cardNameInput.value = "";
-  cardLinkInput.value = "";
-  disableButton(cardSubmitBtn, settings);
-  closeModal(cardModal);
+  api
+    .addNewCard(inputValues)
+    .then((newCard) => {
+      const cardElement = getCardElement(newCard);
+      cardList.prepend(cardElement);
+      evt.target.reset();
+      disableButton(cardSubmitBtn, settings);
+      closeModal(cardModal);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 }
 
 profileEditButton.addEventListener("click", () => {
