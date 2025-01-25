@@ -146,6 +146,22 @@
   opacity: 0.8;
 }
 
+.modal__cancel-btn {
+  width: 156px;
+  padding: 18px 0;
+  background-color: #212121;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.modal__cancel-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 912px) {
   .modal__close-btn_type_preview {
     top: -40px;

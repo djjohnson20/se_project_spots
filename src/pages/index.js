@@ -1,5 +1,11 @@
 import "./index.css";
-
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+  disableButton,
+} from "../scripts/validation.js";
+import Api from "../utils/Api.js";
 import HeaderSrc from "/src/images/logo.svg";
 import PlusSrc from "/src/images/plus.svg";
 import PencilSrc from "/src/images/pencil.svg";
@@ -20,14 +26,6 @@ Avatar.src = AvatarSrc;
 
 const AvatarPencil = document.getElementById("pencil-light");
 AvatarPencil.src = PencilLightSrc;
-
-import {
-  enableValidation,
-  settings,
-  resetValidation,
-  disableButton,
-} from "../scripts/validation.js";
-import Api from "../utils/Api.js";
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
@@ -77,6 +75,7 @@ const editModalDescriptionInput = editModal.querySelector(
 // Delete form elemenets
 const deleteModal = document.querySelector("#delete-modal");
 const deleteCloseBtn = deleteModal.querySelector(".modal__close-btn");
+const deleteCancelBtn = deleteModal.querySelector(".modal__cancel-btn");
 const deleteForm = deleteModal.querySelector(".modal__form");
 
 // Card form elements
@@ -121,6 +120,7 @@ function getCardElement(data) {
   });
 
   cardLikeBtn.addEventListener("click", handleLike);
+
   cardDeleteBtn.addEventListener("click", (evt) =>
     handleDeleteCard(cardElement, data._id)
   );
@@ -241,6 +241,10 @@ avatarModalCloseBtn.addEventListener("click", () => {
 });
 
 deleteCloseBtn.addEventListener("click", () => {
+  closeModal(deleteModal);
+});
+
+deleteCancelBtn.addEventListener("click", () => {
   closeModal(deleteModal);
 });
 
