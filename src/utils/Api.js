@@ -19,8 +19,6 @@ class Api {
     });
   }
 
-  // TODO - implement POST /cards
-
   addNewCard({ name, link }) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
@@ -71,6 +69,18 @@ class Api {
       body: JSON.stringify({
         avatar,
       }),
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      Promise.reject(`Error: ${res.status}`);
+    });
+  }
+
+  deleteCard(id) {
+    return fetch(`${this._baseUrl}/cards/${id}`, {
+      method: "DELETE",
+      headers: this._headers,
     }).then((res) => {
       if (res.ok) {
         return res.json();
