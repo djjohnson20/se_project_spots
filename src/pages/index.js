@@ -184,10 +184,13 @@ function handleAddCardSubmit(evt) {
 }
 
 function handleDeleteSubmit(evt) {
-  evt.preventDefault;
+  evt.preventDefault();
   api
-    .deleteCard()
-    .then(() => {})
+    .deleteCard(selectedCardId)
+    .then(() => {
+      selectedCard.remove();
+      closeModal(deleteModal);
+    })
     .catch(console.error);
 }
 
