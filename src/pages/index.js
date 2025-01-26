@@ -75,6 +75,7 @@ const editModalDescriptionInput = editModal.querySelector(
 // Delete form elemenets
 const deleteModal = document.querySelector("#delete-modal");
 const deleteCloseBtn = deleteModal.querySelector(".modal__close-btn");
+const deleteBtn = deleteModal.querySelector(".modal__delete-btn");
 const deleteCancelBtn = deleteModal.querySelector(".modal__cancel-btn");
 const deleteForm = deleteModal.querySelector(".modal__form");
 

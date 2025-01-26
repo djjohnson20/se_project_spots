@@ -22,6 +22,7 @@
   background-color: transparent;
   opacity: 0.8;
   cursor: pointer;
+  bottom: 12px;
 }
 
 .profile__avatar-container:hover .profile__avatar-btn {
@@ -132,6 +133,7 @@
 
   .profile__avatar-btn {
     visibility: visible;
+    bottom: 18px;
   }
 
   .profile__avatar-btn::after {
