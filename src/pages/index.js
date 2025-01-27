@@ -110,7 +110,7 @@ function getCardElement(data) {
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
 
   if (data.isLiked) {
-    cardLikeBtn.classList.add(".card__like-button_liked");
+    cardLikeBtn.classList.add("card__like-button_liked");
   }
 
   cardNameEl.textContent = data.name;
