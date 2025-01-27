@@ -120,9 +120,9 @@ function getCardElement(data) {
     previewModalImageEl.alt = data.name;
   });
 
-  cardLikeBtn.addEventListener("click", handleLike);
+  cardLikeBtn.addEventListener("click", () => handleLike(data._id));
 
-  cardDeleteBtn.addEventListener("click", (evt) =>
+  cardDeleteBtn.addEventListener("click", () =>
     handleDeleteCard(cardElement, data._id)
   );
 
@@ -201,7 +201,7 @@ function handleDeleteCard(cardElement, cardId) {
   openModal(deleteModal);
 }
 
-function handleLike() {
+function handleLike(evt) {
   const cardLikeBtn = document.querySelector(".card__like-btn");
   cardLikeBtn.classList.toggle("card__like-button_liked");
 }
