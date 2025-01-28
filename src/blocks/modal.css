@@ -278,6 +278,10 @@
     width: 100%;
   }
 
+  .modal__delete-btn {
+    width: 156px;
+  }
+
   .modal__content {
     padding: 0 10px 12px;
     position: relative;
