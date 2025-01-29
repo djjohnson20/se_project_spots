@@ -11,6 +11,11 @@ A webpage that allows users to share their photos with captions for the world. F
 - HTML
 - CSS
 - Responsive Design
+- JavaScript
+- Node.js
+- NPM
+- Webpack
+- APIs
 
 ## Project Description Video
 
